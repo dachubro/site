@@ -2,6 +2,11 @@
 
 	.section-title {
 		margin-bottom: 48px;
+		text-align: center;
+		background: linear-gradient(135deg, color(typography, 1) 0%, color(primary, 2) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
 	}
 }
 
@@ -11,6 +16,7 @@
     justify-content: space-evenly;
     margin-right: -30px;
     margin-left: -30px;
+    gap: 24px;
 
     &:first-of-type {
         margin-top: -16px;
@@ -26,15 +32,68 @@
     width: 380px;
     max-width: 380px;
     flex-grow: 1;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, color(primary, 1), color(secondary, 1), color(accent, 1));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.2);
+
+        &::before {
+            opacity: 1;
+        }
+    }
 }
 
 .feature-inner {
     height: 100%;
+    padding: 24px;
 }
 
 .feature-title {
 	@include font-family(base);
 	@include font-weight(medium);
+	color: color(typography, 1);
+	margin-bottom: 16px;
+}
+
+.feature-icon {
+	margin-bottom: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 80px;
+	background: linear-gradient(135deg, color(primary, 1) 0%, color(secondary, 1) 100%);
+	border-radius: 20px;
+	margin: 0 auto 24px;
+	transition: transform 0.3s ease;
+
+	svg {
+		filter: brightness(0) invert(1);
+	}
+
+	.feature:hover & {
+		transform: scale(1.1) rotate(5deg);
+	}
 }
 
 @include media( '>medium' ) {

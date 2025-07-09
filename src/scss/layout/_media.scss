@@ -6,16 +6,35 @@
 
 	.section-paragraph {
 		margin-bottom: 48px;
+		color: color(typography, 2);
+		font-size: 1.125rem;
+		line-height: 1.7;
+	}
+
+	.section-title {
+		text-align: center;
+		background: linear-gradient(135deg, color(typography, 1) 0%, color(primary, 2) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
 	}
 }
 
 .media-canvas {
 	position: relative;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 
 	svg {
 		position: relative; /* To display the canvas above the illustration */
 		width: 100%;
 		height: auto;
+	}
+
+	iframe {
+		border-radius: 20px;
 	}
 
 	&::before {

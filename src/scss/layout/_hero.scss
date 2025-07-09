@@ -2,14 +2,32 @@
 	text-align: center;
     padding-top: 48px;
 	padding-bottom: 24px;
+	background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+	border-radius: 24px;
+	margin: 24px;
+	backdrop-filter: blur(20px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero-copy {
     position: relative; /* To display elements above hero illustrations */
+    z-index: 2;
+}
+
+.hero-title {
+	background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #F59E0B 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	font-weight: 800;
+	letter-spacing: -0.02em;
 }
 
 .hero-paragraph {
     margin-bottom: 32px;
+    color: color(typography, 2);
+    font-size: 1.125rem;
+    line-height: 1.7;
 }
 
 .hero-app {
